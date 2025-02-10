@@ -5,3 +5,5 @@ edition = "2021"
 
 [dependencies]
 pub_sub_server = {git = "https://github.com/samuel-bazinet/Rust_Pub_Sub_Server", branch = "main"}
+log = "0.4.25"
+simple_logger = "5.0.0"

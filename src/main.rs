@@ -1,8 +1,11 @@
 use std::env;
 use pub_sub_server;
+use simple_logger::SimpleLogger;
 
 fn main() {
-    println!("Hello, world!");
+    SimpleLogger::new().init().unwrap();
+
+    log::info!("Started up pi-world");
     let args: Vec<String> = env::args().collect();
     if args.len() != 2 {
         panic!("Wrong number of arguments, please only provide a single numerical argument");
