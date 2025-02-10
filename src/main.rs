@@ -1,4 +1,5 @@
 use std::env;
+use pub_sub_server;
 
 fn main() {
     println!("Hello, world!");
@@ -13,6 +14,8 @@ fn main() {
     } else {
         panic!("Please provide a positive integer as your single argument");
     }
+    let configs = pub_sub_server::setup_server("configs/configs.json").unwrap();
+    let _ = pub_sub_server::start_listening(configs);
 }
 
 fn get_max_prime(max: usize) -> usize {
